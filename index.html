@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maswopian Language Converter</title>
+    <title>Maswapian Language Converter</title>
     <link rel="stylesheet" href="maswopian.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -36,13 +36,13 @@
             font-size: 16px;
             background-color: #f9f9f9;
         }
-        .copy-btn, .paste-btn {
+        .copy-btn {
             font-size: 20px;
             cursor: pointer;
             background: none;
             border: none;
         }
-        .copy-btn:hover, .paste-btn:hover {
+        .copy-btn:hover {
             color: #007bff;
         }
     </style>
@@ -50,15 +50,14 @@
 <body>
 
 <div class="container">
-    <h1>Maswopian Language Converter</h1>
+    <h1>Maswapian Language Converter</h1>
 
     <textarea id="inputText" placeholder="Enter text here"></textarea>
     <br>
-    <button onclick="convertToMaswapian()">Convert to Maswopian</button>
+    <button onclick="convertToMaswapian()">Convert to Maswapian</button>
     <button onclick="convertToNormal()">Convert to Normal</button>
     
     <br><br>
-    <button class="paste-btn" onclick="pasteText()">🖶 Paste</button>
     <div class="output-box" id="outputBox" style="display: none;">
         <span id="outputText"></span>
         <button class="copy-btn" onclick="copyText()">📋 Copy</button>
@@ -78,15 +77,6 @@
         document.execCommand('copy');
         document.body.removeChild(tempTextArea);
         alert("Text copied to clipboard!");
-    }
-
-    // Function to paste text into the input field
-    function pasteText() {
-        navigator.clipboard.readText().then(text => {
-            document.getElementById("inputText").value = text;
-        }).catch(err => {
-            console.error('Failed to read clipboard contents: ', err);
-        });
     }
 
     // Example functions for conversion (to be implemented)
